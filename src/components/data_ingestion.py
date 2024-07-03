@@ -21,7 +21,7 @@ class DataingestionConfig:
 
 class DataIngestion:
     def __init__(self):
-        self.ingestion_config=DataingestionConfig() #when this is called the above 3 variables(train,test,rwa_data will be saved in self.ingestion_config)
+        self.ingestion_config=DataingestionConfig() #when this is called the above 3 variables(train,test,raw_data will be saved in self.ingestion_config)
     
     def initiate_data_ingestion(self):
         logging.info("Entered the data ingestion method or component")
@@ -46,12 +46,6 @@ class DataIngestion:
         except:
             raise CustomException(error_message="Error occured while reading the data",error_detail=sys.exc_info())
         
-# if __name__== "__main__":
-#     obj=DataIngestion()
-#     train_data,test_data=obj.initiate_data_ingestion()
-
-#     data_transformation=DataTransformation()
-#     train_arr,test_arr,_=data_transformation.initiate_data_transformation(train_data,test_data)
 
 if __name__=="__main__":
     obj=DataIngestion()
